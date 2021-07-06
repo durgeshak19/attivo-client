@@ -37,7 +37,7 @@ function sendPostReq(url, type, value){
 }
 
 function sendCPU(){
-    sendPostReq('cpuusage', 'cpu', os.cpus());
+    sendPostReq('/cpuusage', 'cpu', os.cpus());
 }
 
 
@@ -79,10 +79,10 @@ function sendDir(){
 
 ws.on("ping" , function(msg){  
     console.log("Data Requested - " + counter++)
-    // sendCPU();
-    // sendDisk();
-    //sendRAM();
-    //sendProcesses();
+    sendCPU();
+    sendDisk();
+    sendRAM();
+    sendProcesses();
     sendDir();
     // ws.send(JSON.stringify(obj));
     //if error put it in local list 
