@@ -1,12 +1,13 @@
 var WebSocket = require("ws");
 var os = require("os");
 const axios = require("axios");
-const serverAddress = "ws://127.0.0.1:3000";
 const http = require("http");
 const disk = require("node-disk-info");
 const psList = require('ps-list');
 const fs = require('fs');
 const path = require('path');
+
+const serverAddress = "ws://127.0.0.1:3000";
 
 const ws = new WebSocket(serverAddress);
 ws.on('open' , function(){
